@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HolaMundo-16.2.12';
+  usuario = '@juanmiloz';
 }
