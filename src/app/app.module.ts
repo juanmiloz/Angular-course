@@ -16,6 +16,12 @@ import { NestedFormComponent } from './components/forms/nested-form/nested-form.
 import { ArrayFormComponent } from './components/forms/array-form/array-form.component';
 import { ValidateFormComponent } from './components/forms/validate-form/validate-form.component';
 import {MaterialModule} from "./modules/material/material.module";
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import {MatIconModule} from "@angular/material/icon";
+import { CompleteNamePipe } from './pipe/complete-name.pipe';
+import { RandomUserComponent } from './components/random-user/random-user.component';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -28,7 +34,11 @@ import {MaterialModule} from "./modules/material/material.module";
     FormComponent,
     NestedFormComponent,
     ArrayFormComponent,
-    ValidateFormComponent
+    ValidateFormComponent,
+    LoginFormComponent,
+    CompleteNamePipe,
+    RandomUserComponent,
+    RandomContactPageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,9 @@ import {MaterialModule} from "./modules/material/material.module";
     BrowserAnimationsModule,
     //Formularios reactivos
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
