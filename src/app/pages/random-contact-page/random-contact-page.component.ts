@@ -7,9 +7,10 @@ import {RandomUserService} from "../../services/random-user.service";
   templateUrl: './random-contact-page.component.html',
   styleUrls: ['./random-contact-page.component.scss']
 })
-export class RandomContactPageComponent implements OnInit{
+export class RandomContactPageComponent implements OnInit {
 
   contact: IRandonContact | undefined
+
   constructor(private randomUserService: RandomUserService) {
   }
 
@@ -17,12 +18,21 @@ export class RandomContactPageComponent implements OnInit{
     this.getNewContact()
   }
 
-  getNewContact():void{
-    this.randomUserService.getRandomContact().subscribe(
-      (response: Results) =>{
+  getNewContact(): void {
+    /*this.randomUserService.getRandomContact().subscribe(
+      (response: Results) => {
         this.contact = response.results[0]; // se lo pasaremos al RandomContact
-      }
-    )
+      },
+      (error) => console.log(`${error}`)
+    )*/
+
+    this.randomUserService.getRandomContact().subscribe({
+      next: (response: Results) => {
+        this.contact = response.results[0]; // se lo pasaremos al RandomContact
+      },
+      error: (error) => console.log(`${error}`),
+      complete: () => console.info(`Peticion de random contact terminada`),
+    })
   }
 
 }

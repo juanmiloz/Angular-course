@@ -2,7 +2,9 @@
 <ng-container *ngIf="randomContact; else noContact">
   <mat-card class="random-contact-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
+      <div mat-card-avatar>
+        <img [src]="randomContact.picture.thumbnail" class="random-contact-avatar">
+      </div>
       <mat-card-title>
         {{ randomContact.name.title }}
         {{ randomContact.name.first }}
